@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Anime Essential Store × Let's Play | Antofagasta</title>
+  <meta name="description" content="Tienda oficial de TCG, model kits, juegos de mesa y accesorios en Antofagasta. Torneos, área de juegos y Academia para aprender a jugar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Aviso de maqueta -->
+  <div class="demo-bar">Maqueta de demostración creada por <strong>Noirstweb</strong> para Anime Essential Store · Datos de ejemplo</div>
+
+  <!-- Barra de avisos (edita los textos aquí) -->
+  <div class="announce" aria-label="Avisos">
+    <div class="announce__track">
+      <span>Tienda oficial en Antofagasta</span>
+      <span>Te separamos tu producto por WhatsApp</span>
+      <span>Torneos todas las semanas</span>
+      <span aria-hidden="true">Tienda oficial en Antofagasta</span>
+      <span aria-hidden="true">Te separamos tu producto por WhatsApp</span>
+      <span aria-hidden="true">Torneos todas las semanas</span>
+    </div>
+  </div>
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo" aria-label="Anime Essential Store, inicio">
+        <span class="logo__mark" aria-hidden="true">E</span>
+        <span class="logo__text">Anime Essential <small>× Let's Play</small></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a href="#tienda">Tienda</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#academia">Academia</a>
+        <a href="#visitanos">Visítanos</a>
+      </nav>
+
+      <div class="header__actions">
+        <a class="btn btn--wa btn--sm" data-wa="Hola Anime Essential, tengo una consulta." href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- ===== Banner principal (las promos se editan en js/main.js → PROMOS) ===== -->
+    <section class="promo" aria-roledescription="carrusel" aria-label="Promociones">
+      <div class="promo__track" id="promoTrack"></div>
+      <button class="promo__arrow promo__arrow--prev" id="promoPrev" aria-label="Promoción anterior">‹</button>
+      <button class="promo__arrow promo__arrow--next" id="promoNext" aria-label="Promoción siguiente">›</button>
+      <div class="promo__dots" id="promoDots" role="tablist" aria-label="Elegir promoción"></div>
+    </section>
+
+    <!-- ===== Franja de confianza ===== -->
+    <div class="infobar">
+      <div class="container infobar__inner">
+        <p class="status" id="status" aria-live="polite"></p>
+        <div class="rating">
+          <strong>94%</strong>
+          <span>nos recomienda <small>· 230 opiniones en Facebook</small></span>
+        </div>
+        <a class="infobar__addr" href="#visitanos">📍 Arturo Prat 632, Local 23</a>
+      </div>
+    </div>
+
+    <!-- ===== Categorías (se editan en js/main.js → CATEGORIAS) ===== -->
+    <section class="section section--cream">
+      <div class="container">
+        <div class="section__head">
+          <h2>¿Qué estás buscando?</h2>
+        </div>
+        <div class="cats" id="cats"></div>
+      </div>
+    </section>
+
+    <!-- Cinta de juegos oficiales -->
+    <div class="ticker" aria-label="Juegos oficiales">
+      <div class="ticker__track">
+        <span>Pokémon TCG</span><span>Yu-Gi-Oh!</span><span>Mitos y Leyendas</span><span>Digimon</span><span>One Piece</span><span>Gundam</span><span>Dragon Shield</span><span>Bandai Hobby</span>
+        <span aria-hidden="true">Pokémon TCG</span><span aria-hidden="true">Yu-Gi-Oh!</span><span aria-hidden="true">Mitos y Leyendas</span><span aria-hidden="true">Digimon</span><span aria-hidden="true">One Piece</span><span aria-hidden="true">Gundam</span><span aria-hidden="true">Dragon Shield</span><span aria-hidden="true">Bandai Hobby</span>
+      </div>
+    </div>
+
+    <!-- ===== Tienda ===== -->
+    <section class="section" id="tienda">
+      <div class="container">
+        <div class="section__head">
+          <h2>Lo que encuentras</h2>
+          <p>Consulta stock y precio directo por WhatsApp. Te lo dejamos separado para que lo retires.</p>
+        </div>
+
+        <div class="filters" id="filters" role="group" aria-label="Filtrar productos"></div>
+
+        <div class="grid" id="products"></div>
+      </div>
+    </section>
+
+    <!-- ===== Eventos ===== -->
+    <section class="section section--orange" id="eventos">
+      <div class="container">
+        <div class="section__head">
+          <h2>Esta temporada en la tienda</h2>
+          <p>Torneos, lanzamientos y actividades para todas las edades.</p>
+        </div>
+        <div class="events" id="events"></div>
+      </div>
+    </section>
+
+    <!-- ===== Academia ===== -->
+    <section class="section" id="academia">
+      <div class="container academia">
+        <div>
+          <span class="tag">Para principiantes</span>
+          <h2>Academia: aprende a jugar</h2>
+          <p>¿Tu hijo quiere empezar con las cartas y no sabes por dónde partir? En la Academia le enseñamos desde cero: cómo se juega, cómo armar su primer mazo y cómo cuidar sus cartas.</p>
+          <ul class="checks">
+            <li>Clases grupales los sábados</li>
+            <li>Mazo de práctica incluido</li>
+            <li>Categorías Junior, Senior y Máster</li>
+            <li>Ideal para niños, niñas y papás</li>
+          </ul>
+          <a class="btn btn--primary" data-wa="Hola Anime Essential, quiero inscribir a alguien en la Academia para aprender a jugar." href="#" target="_blank" rel="noopener">Inscribir por WhatsApp</a>
+        </div>
+        <div class="steps">
+          <div class="step"><span>1</span><h3>Aprende</h3><p>Reglas básicas con un mazo de práctica.</p></div>
+          <div class="step"><span>2</span><h3>Arma tu mazo</h3><p>Te ayudamos a elegir tus primeras cartas.</p></div>
+          <div class="step"><span>3</span><h3>Juega tu primer torneo</h3><p>Torneos para principiantes en la tienda.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Visítanos ===== -->
+    <section class="section section--dark" id="visitanos">
+      <div class="container visit">
+        <div>
+          <h2>Visítanos</h2>
+          <p class="visit__address">Arturo Prat N°632, Local N°23<br>Antofagasta</p>
+          <div class="visit__cta">
+            <a class="btn btn--primary" href="https://www.google.com/maps/search/?api=1&query=Arturo%20Prat%20632%20Antofagasta" target="_blank" rel="noopener">Cómo llegar</a>
+            <a class="btn btn--wa" data-wa="Hola Anime Essential, tengo una consulta." href="#" target="_blank" rel="noopener">+56 9 3599 6658</a>
+          </div>
+        </div>
+        <div class="hours">
+          <h3>Horario</h3>
+          <ul id="hours"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="#inicio" class="logo logo--footer">
+          <span class="logo__mark" aria-hidden="true">E</span>
+          <span class="logo__text">Anime Essential <small>× Let's Play</small></span>
+        </a>
+        <p>Tienda oficial de TCG, model kits y juegos de mesa en Antofagasta, con área de juegos para la comunidad.</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/anime.essential.store/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <h3>Tienda</h3>
+        <ul id="footCats"></ul>
+      </div>
+      <div>
+        <h3>Comunidad</h3>
+        <ul>
+          <li><a href="#eventos">Eventos y torneos</a></li>
+          <li><a href="#academia">Academia</a></li>
+          <li><a href="#visitanos">Área de juegos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <ul>
+          <li><a data-wa="Hola Anime Essential, tengo una consulta." href="#" target="_blank" rel="noopener">WhatsApp +56 9 3599 6658</a></li>
+          <li><a href="mailto:anime.essential@gmail.com">anime.essential@gmail.com</a></li>
+          <li>Arturo Prat N°632, Local N°23, Antofagasta</li>
+          <li>Lunes a sábado, 11:00 – 20:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year">2026</span> Anime Essential Store × Let's Play</span>
+      <span>Las marcas mencionadas pertenecen a sus respectivos dueños. Productos, precios y eventos de ejemplo.</span>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a class="wa-float" data-wa="Hola Anime Essential, tengo una consulta." href="#" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M3.5 20.5l1.2-4.1A8.6 8.6 0 1 1 7.8 19.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9.3 7.9c.3 0 .5 0 .7.4l.8 1.7c.1.3 0 .5-.1.7l-.6.7c.6 1.2 1.6 2.2 2.8 2.8l.7-.6c.2-.2.4-.2.7-.1l1.7.8c.3.2.4.4.4.7 0 .6-.4 1.3-1 1.6-.7.3-1.8.2-3.4-.6-1.8-1-3.2-2.4-4.1-4.1-.8-1.6-.9-2.7-.6-3.4.3-.6 1-1 1.6-1z" fill="currentColor"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
